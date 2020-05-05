@@ -1,0 +1,112 @@
+.test-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.entry-bookend-progress-container {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: no-wrap;
+    justify-content: center;
+    width: calc(100% - 40px);
+    border-radius: 5px;
+    list-style: none;
+    max-width: 940px;
+    padding: 20px;
+
+    .progress-item {
+        height: 60px;
+        margin: 2px;
+
+        &.progress-step {
+            display: flex;
+
+            .progress-index {
+                width: 40px;
+                height: 40px;
+                margin: auto;
+                line-height: 40px;
+                background-color: none;
+                border-radius: 100%;
+                border: 1px solid rgb(45, 45, 45);
+                transition: all .2s linear;
+
+                .index {
+                    color: black;
+                    font-weight: bold;
+                }
+            }
+
+            &.current {
+                .progress-index {
+                    border-color: black;
+                    transform: scale(1.1);
+
+                    &::before {
+                        font-size: 24px;
+                    }
+
+                }
+            }
+
+            &.active {
+
+                .progress-index {
+                    background-color: rgb(134, 215, 14);
+
+                    .index {
+                        display: none;
+                    }
+
+                    &::before {
+                        content: "\f00c";
+                        color: #fff;
+                        font-size: 36px;
+                        opacity: .6;
+                        font-weight: normal;
+                    }
+                }
+            }
+        }
+
+        &.item-divider {
+            width: 100%;
+            max-width: 100px;
+            position: relative;
+            display: flex;
+
+            .line-divider {
+                align-self: center;
+                height: 2px;
+                width: 100%;
+                background-color: rgb(45, 45, 45);
+                opacity: .3;
+                border-radius: 2px;
+                transition: opacity .3s ease-in;
+
+                &::before {
+                    content: "";
+                    display: block;
+                    border-radius: 2px;
+                    height: 2px;
+                    background-color: rgb(45, 45, 45);
+                    width: 0px;
+                    transition: width .3s linear;
+                }
+            }
+
+            &.active {
+                .line-divider {
+                    opacity: 1;
+
+                    &::before {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
