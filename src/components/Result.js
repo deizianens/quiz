@@ -1,7 +1,7 @@
 import React from "react";
 
-function Answer() {
+function Result() {
   return <div></div>;
 }
 
-export default Answer;
+export default Result;
