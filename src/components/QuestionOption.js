@@ -3,8 +3,8 @@ import React from "react";
 function QuestionOption() {
   return (
     <div>
-      <button>Verdadeiro</button>
-      <button>Falso</button>
+      <button className="button-option button-true">Verdadeiro</button>
+      <button className="button-option button-false">Falso</button>
     </div>
   );
 }
